@@ -1,0 +1,9 @@
+project: savantenvs/lua-nginx-module
+target: fuzz_ssl_session-mined-7464584
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_ssl_session-mined-7464584/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_ssl_session
+    libfuzzer: true
+    timeout: 30
