@@ -1,0 +1,10 @@
+project: savantenvs/lua-nginx-module
+target: fuzz_regex
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_regex/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_regex
+    libfuzzer: true
+    dictionary: /mayhem/mayhem/fuzz_regex/fuzz_regex.dict
+    timeout: 30

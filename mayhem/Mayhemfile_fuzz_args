@@ -1,0 +1,10 @@
+project: savantenvs/lua-nginx-module
+target: fuzz_args
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_args/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_args
+    libfuzzer: true
+    dictionary: /mayhem/mayhem/fuzz_args/fuzz_args.dict
+    timeout: 30
